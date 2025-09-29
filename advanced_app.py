@@ -16,39 +16,20 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-# --- Big "I ❤️ U" made of small hearts ---
-love_art = """
-<div style="text-align: center; font-size: 18px; line-height: 1.1; font-family: monospace;">
+st.markdown('<h1 class="love-header">💕 SMILE WITH LOVE MY SWEET 22 💕</h1>', unsafe_allow_html=True)
+# Animated sparkles row
+sparkle_cols = st.columns(7)
+sparkles = ["✨", "💫", "⭐", "🌟", "✨", "💫", "⭐"]
+for i, col in enumerate(sparkle_cols):
+    with col:
+        st.markdown(f'<div class="sparkle" style="text-align: center; font-size: 1.5rem;">{sparkles[i]}</div>', unsafe_allow_html=True)
 
-<!-- I -->
-❤️❤️❤️       
-  ❤️
-  ❤️
-  ❤️
-❤️❤️❤️      
-
-<br>
-
-<!-- Heart -->
-   ❤️❤️   ❤️❤️   
- ❤️❤️❤️❤️❤️❤️❤️ 
- ❤️❤️❤️❤️❤️❤️❤️ 
-  ❤️❤️❤️❤️❤️❤️  
-    ❤️❤️❤️❤️    
-      ❤️❤️      
-       ❤️       
-
-<br>
-
-<!-- U -->
-❤️       ❤️
-❤️       ❤️
-❤️       ❤️
-❤️       ❤️
- ❤️❤️❤️❤️ 
-
-</div>
-"""
+# Enhanced floating hearts
+heart_cols = st.columns(9)
+heart_emojis = ["💖", "💕", "💗", "💝", "💖", "💕", "💗", "💝", "💖"]
+for i, col in enumerate(heart_cols):
+    with col:
+        st.markdown(f'<div class="heart" style="animation-delay: {i*0.2}s;">💖</div>', unsafe_allow_html=True)
 
 st.markdown(love_art, unsafe_allow_html=True)
 # Animated sparkles row
