@@ -725,19 +725,12 @@ video_folder = 'videos'
 if os.path.exists(video_folder):
     videos = [f"{video_folder}/{vid}" for vid in os.listdir(video_folder) if vid.lower().endswith(("mp4", "mov"))]
     if videos:
-        # Display videos in columns just like photos
-        cols = st.columns(2)  # 2 per row (videos need more width than photos)
+        cols = st.columns(2)  # 2 per row
         for i, video in enumerate(videos):
             with cols[i % 2]:
-                st.markdown(
-                    f"""
-                    <video width="100%" height="250" controls>
-                        <source src="{video}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    """,
-                    unsafe_allow_html=True
-                )
+                with open(video, "rb") as vfile:
+                    video_bytes = vfile.read()
+                    st.video(video_bytes)
     else:
         st.info("No videos found in the 'videos' folder.")
 else:
