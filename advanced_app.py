@@ -31,8 +31,6 @@ for i, col in enumerate(heart_cols):
     with col:
         st.markdown(f'<div class="heart" style="animation-delay: {i*0.2}s;">💖</div>', unsafe_allow_html=True)
 
-st.markdown(love_art, unsafe_allow_html=True)
-# Animated sparkles row
 sparkle_cols = st.columns(7)
 sparkles = ["✨", "💫", "⭐", "🌟", "✨", "💫", "⭐"]
 for i, col in enumerate(sparkle_cols):
