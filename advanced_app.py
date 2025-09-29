@@ -736,22 +736,6 @@ if os.path.exists(video_folder):
 else:
     st.warning("Video folder not found. Please add video files here.")
 
-# --- Background Music Player ---
-st.markdown("### 🎵 Background Music")
-music_folder = 'music'
-if os.path.exists(music_folder):
-    music_files = [f"{music_folder}/{mus}" for mus in os.listdir(music_folder) if mus.lower().endswith(("mp3", "wav", "ogg"))]
-    if music_files:
-        selected_song = st.selectbox("Choose a song to play", music_files)
-        audio_file = open(selected_song, "rb").read()
-        st.audio(audio_file, format='audio/mp3')
-    else:
-        st.info("No music files found in the 'music' folder.")
-else:
-    st.warning("Music folder not found. Please add audio files here.")
-
-# 
-
 # Birthday settings
 st.sidebar.markdown("### 📅 Birthday Configuration")
 birthday_date = st.sidebar.date_input("Your Actual Birthday:", value=date(2002, 9, 29))
@@ -762,7 +746,21 @@ celebration_mode = st.sidebar.selectbox("Celebration Mode:",
 st.sidebar.markdown("### 🎵 Atmosphere Settings") 
 mood = st.sidebar.selectbox("Birthday Mood:", 
                           ["Romantic & Dreamy", "Happy & Energetic", "Calm & Peaceful", "Exciting & Adventure"])
+# Header with enhanced animation
+st.markdown('<h1 class="love-header">💕 Happy 22nd Birthday My Extraordinary Love! 💕</h1>', unsafe_allow_html=True)
+# Animated sparkles row
+sparkle_cols = st.columns(7)
+sparkles = ["✨", "💫", "⭐", "🌟", "✨", "💫", "⭐"]
+for i, col in enumerate(sparkle_cols):
+    with col:
+        st.markdown(f'<div class="sparkle" style="text-align: center; font-size: 1.5rem;">{sparkles[i]}</div>', unsafe_allow_html=True)
 
+# Enhanced floating hearts
+heart_cols = st.columns(9)
+heart_emojis = ["💖", "💕", "💗", "💝", "💖", "💕", "💗", "💝", "💖"]
+for i, col in enumerate(heart_cols):
+    with col:
+        st.markdown(f'<div class="heart" style="animation-delay: {i*0.2}s;">💖</div>', unsafe_allow_html=True)
 # Final enhanced footer
 st.markdown("---")
 st.markdown("""
