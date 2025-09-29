@@ -747,7 +747,7 @@ st.sidebar.markdown("### 🎵 Atmosphere Settings")
 mood = st.sidebar.selectbox("Birthday Mood:", 
                           ["Romantic & Dreamy", "Happy & Energetic", "Calm & Peaceful", "Exciting & Adventure"])
 # Header with enhanced animation
-st.markdown('<h1 class="love-header">💕 Happy 22nd Birthday My Extraordinary Love! 💕</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="love-header">💕 I LOVE YOU MY KAREJA, GULLU, SHONU, RANI aur HMAR PYAARI GAIYA 💕</h1>', unsafe_allow_html=True)
 # Animated sparkles row
 sparkle_cols = st.columns(7)
 sparkles = ["✨", "💫", "⭐", "🌟", "✨", "💫", "⭐"]
