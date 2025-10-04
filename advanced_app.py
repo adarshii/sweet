@@ -23,7 +23,13 @@ sparkles = ["✨", "💫", "⭐", "🌟", "✨", "💫", "⭐"]
 for i, col in enumerate(sparkle_cols):
     with col:
         st.markdown(f'<div class="sparkle" style="text-align: center; font-size: 1.5rem;">{sparkles[i]}</div>', unsafe_allow_html=True)
-
+st.markdown('<h1 class="love-header">💕 तू तुझ्यावर प्रेम करतोस 💕</h1>', unsafe_allow_html=True)
+# Animated sparkles row
+sparkle_cols = st.columns(7)
+sparkles = ["✨", "💫", "⭐", "🌟", "✨", "💫", "⭐"]
+for i, col in enumerate(sparkle_cols):
+    with col:
+        st.markdown(f'<div class="sparkle" style="text-align: center; font-size: 1.5rem;">{sparkles[i]}</div>', unsafe_allow_html=True)
 # Enhanced floating hearts
 heart_cols = st.columns(9)
 heart_emojis = ["💖", "💕", "💗", "💝", "💖", "💕", "💗", "💝", "💖"]
